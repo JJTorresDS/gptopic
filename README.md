@@ -1,7 +1,7 @@
 # gptopic
 
-- [ ] Create venv and install TF and required libraries
-- [ ] Register it in jupyter notebooks see (link)[https://stackoverflow.com/questions/42449814/running-jupyter-notebook-in-a-virtualenv-installed-sklearn-module-not-available] for more details.
+- [x] Create venv and install TF and required libraries
+- [ ] Register it in jupyter notebooks see [link](https://stackoverflow.com/questions/42449814/running-jupyter-notebook-in-a-virtualenv-installed-sklearn-module-not-available) for more details.
     * pip install jupyter
     * python -m ipykernel install --user --name=uol_project
 - [ ] Pull data
