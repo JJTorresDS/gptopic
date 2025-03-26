@@ -21,28 +21,24 @@ def get_google_play_reviews(app, count=100, filter_score_with=None,
     return result
 
 
-def gemini_query(prompt, gemini_key, categories="", input_text="", counter=0):
-    prompt = prompt
-    categories = categories
-    input_text = input_text
+def gemini_query(prompt, gemini_key, counter=0):
     
     genai.configure(api_key=gemini_key)
     model = genai.GenerativeModel("gemini-1.5-flash-latest")
     try:
-        response = model.generate_content(prompt.format(input_text=input_text,categories=categories))
+        response = model.generate_content(prompt)
     except: 
         time.sleep(5)
         response = "gemini failed to respond"
         return response
     return response.text.strip()
 
-def ollama_query(prompt, model = "llama3.2:1b", categories="", input_text=""):
+def ollama_query(prompt, model = "llama3.2:1b"):
     #model = "deepseek-r1:7b"
-    prompt = prompt
     
     response = ollama.chat(
         model = model,
-        messages = [{"role":"user", "content":prompt.format(input_text=input_text,categories=categories )}]    
+        messages = [{"role":"user", "content":prompt }]    
     )
 
     return response["message"]["content"].strip()
