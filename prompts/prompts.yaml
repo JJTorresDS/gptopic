@@ -1,0 +1,71 @@
+prompt_v1: "You are an expert Customer Success Manager working int the Crypto Industry. \
+    You are tasked with categorizing a list of user reviews for further analysis. \
+    What category would you assing to the following review: {input_text}{categories}"
+
+prompt_v2: "You are an expert Customer Success Manager working int the Crypto Industry. \
+    You are tasked with categorizing a list of user reviews for further analysis. \
+    What category would you assing to the following review. \
+    Provide your best guess in a sentence with no more than 4 words: {input_text}{categories}"
+
+prompt_v3: "You are an expert Customer Success Manager working int the Crypto Industry. \
+    You are tasked with categorizing a list of user reviews for further analysis. \
+    What category would you assing to the following review. \
+    Provide your best guess in a sentence with no more than 4 words. \
+    If you are unsure, your best guess is ok \
+    : {input_text}{categories}"
+
+prompt_v4: "You are an expert Customer Success Manager working int the Crypto Industry. \
+    You are tasked with categorizing a list of user reviews for further analysis. \
+    What category would you assing to the following review. \
+    Provide your best guess in a sentence with no more than 4 words. \
+    If you are unsure, your best guess is ok \
+    Do not include question marks \
+    : {input_text}{categories}"
+
+prompt_v5: "You are an expert Customer Success Manager working int the Crypto Industry. \
+    You are tasked with categorizing a list of user reviews for further analysis. \
+    What category would you assing to the following review. \
+    Provide your best guess in a sentence with no more than 4 words. \
+    If you are unsure, your best guess is ok. \
+    Do not include question marks. \
+    Please answer with only 1 category. \
+    If the review is just an expression of sentiment (eg: Great!, Bad!, etc). Please use the 'Generic feedback' category \
+    : {input_text}{categories}"
+
+prompt_v6: "You are an expert Customer Success Manager working int the Crypto Industry. \
+    You are tasked with categorizing a list of user reviews for further analysis. \
+    Using the following instructions: \
+    * If the review is just an expression of sentiment (eg: Great!, Bad!, etc). Please use the 'Generic feedback' category \
+    * The category should have no more than 4 words. \
+    * Please answer with only 1 category. \
+    What category would you assing to the following review. \
+    : {input_text}{categories}"
+
+prompt_v7: "You are an expert Customer Success Manager working int the Crypto Industry. \
+    You are tasked with categorizing a list of user reviews for further analysis. \
+    What category would you assing to the following review. \
+    * If the review is just an expression of sentiment (eg: Great!, Bad!, etc). Please use the 'Generic feedback' category \
+    * The category should have no more than 4 words. \
+    * Please answer with only 1 category. \
+    : {input_text}{categories}"
+
+prompt_v8: "You are an expert Customer Success Manager working int the Crypto Industry. \
+    You are tasked with categorizing a list of user reviews for further analysis. \
+    What category would you assing to the following review. \
+    * If the review is just an expression of sentiment (eg: Great!, Bad!, etc). Please use the 'Generic feedback' category \
+    * The category should have no more than 4 words. \
+    * Answer with only 1 category. \
+    * Group similar categories, i.e 'usability issues', 'usability' and 'ease of use', should be categorized as 'usability' . \
+    : {input_text}{categories}"
+
+prompt_v9a: "Can you list the most common categories that could exist within user reviews of a crypto mobile app?\
+    Group similar categories into one, i.e: Customer Support and Customer Services should be grouped under Customer Support.\
+    Provide your answer as a list, eg: [category1, category2,..]\
+    : {input_text}{categories}"
+
+prompt_v9b: "You are an expert Customer Success Manager working int the Crypto Industry.\
+    You are tasked with categorizing a list of user reviews for further analysis\
+    Please assign the review below to one of the following categories: {categories}\
+    If the review is just an expression of sentiment (eg: Great!, Bad!, etc). Please use the 'Generic feedback' category.\
+    Your answer should just be the category name.\
+    : {input_text}"
