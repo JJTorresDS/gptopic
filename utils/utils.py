@@ -1,6 +1,7 @@
 import ollama
 import google.generativeai as genai
 from google_play_scraper import reviews, Sort
+import time
 
 def get_google_play_reviews(app, count=100, filter_score_with=None,
                             lang="en", country="us", sort=Sort.NEWEST):
@@ -21,16 +22,26 @@ def get_google_play_reviews(app, count=100, filter_score_with=None,
     return result
 
 
-def gemini_query(prompt, gemini_key, counter=0):
+def gemini_query(prompt, gemini_key,debug=False, counter=0, tries=3):
     
     genai.configure(api_key=gemini_key)
     model = genai.GenerativeModel("gemini-1.5-flash-latest")
-    try:
-        response = model.generate_content(prompt)
-    except: 
-        time.sleep(5)
-        response = "gemini failed to respond"
-        return response
+    if counter < tries:
+        try:
+            response = model.generate_content(prompt)
+        except: 
+            
+            if debug:
+                print("Gemini Failed to respond. Sleeping...")
+            time.sleep(10) 
+
+            if debug:
+                print("Entering recursive step.", counter+1)
+            return gemini_query(prompt=prompt, 
+                                gemini_key=gemini_key,
+                                  counter=counter+1)
+    else:
+        return "gemini failed to respond"
     return response.text.strip()
 
 def ollama_query(prompt, model = "llama3.2:1b"):

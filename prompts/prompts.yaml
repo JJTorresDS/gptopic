@@ -63,11 +63,11 @@ prompt_v9a: "You are an expert Customer Success Manager working int the {industr
     Group similar categories into one, i.e: Customer Support and Customer Services should be grouped under Customer Support.\
     Provide your answer as a list, eg: [category1, category2,..]"
 
-prompt_v9b: "You are an expert Customer Success Manager working in the Crypto Industry.\
+prompt_v9b: "You are an expert Customer Success Manager working in the {industry} Industry.\
     You are tasked with categorizing a list of user reviews for further analysis. \
     Please assign this review: {input_text}
     
     To one of the following categories: {categories}\
     If the review is just an expression of sentiment (eg: Great!, Bad!, etc). Please use the 'Generic feedback' category.\
    
-   Your answer should just be the category name."
+   Your answer should be a single category name."
