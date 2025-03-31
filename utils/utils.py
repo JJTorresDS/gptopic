@@ -17,22 +17,23 @@ import nltk
 import string
 
 def get_google_play_reviews(app, count=100, filter_score_with=None,
-                            lang="en", country="us", sort=Sort.NEWEST):
+                            lang="en", country="us", sort=Sort.NEWEST, continuation_token=None):
     """
     Wrapper of google_play_scrapper
     app: the code of the app you want to scan (eg: 'com.binance.dev')
     count: the number of reviews (defaults to 100)
     filter_score_with: if you want to filter reviews by number of stars
     """
-    result, continuation_token = reviews(
+    result, token = reviews(
             app,
             count=count, # defaults to 100
             filter_score_with=filter_score_with, # defaults to None(means all score)
             lang=lang, # defaults to 'en'
             country=country, # defaults to 'us'
-            sort=sort # defaults to Sort.NEWEST
+            sort=sort, # defaults to Sort.NEWEST
+            continuation_token=continuation_token
         )
-    return result
+    return result, token
 
 
 def gemini_query(prompt, gemini_key,debug=False, counter=0, tries=3):
