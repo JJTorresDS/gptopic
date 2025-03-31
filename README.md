@@ -17,6 +17,6 @@ Benefits:
 4. On the terminal run the following command to open a jupyter notebook: jupyter notebook
 5. Create a [GEMINI API key (its free!)](https://aistudio.google.com/app/apikey)
 6. Create an '.env' file on the root directory and store your GEMINI API KEY (this key will be used by ´gemini_query´function within the *utils* module).
-5. Open the "Quick start.ipynb" notebook.
+7. Open the "Quick start.ipynb" notebook.
 
 Have fun !!
