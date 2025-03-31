@@ -1,21 +1,21 @@
-# gptopic
+# GPTopic
 
-- [x] Create venv and install TF and required libraries
-- [x] Register it in jupyter notebooks see [link](https://stackoverflow.com/questions/42449814/running-jupyter-notebook-in-a-virtualenv-installed-sklearn-module-not-available) for more details.
-    * pip install jupyter
-    * python -m ipykernel install --user --name=uol_project
-- [x] Pull data
-    - [x] Oversample negative comments since positive ones are not very useful for detecting topics (i.e lots good, great, and that is it.)
-- [x] Label data with Gemini
-- [x] Manual QA of Labeling
-- [x] Train a sequential neural net to identify topicstrained model
-- [ ] Create preprocessing pipelines. Modularize code
-- [x] Run pretrained on a new data set
-    - 
-    - [ ] Generate tags (groun truth)
-    - [ ] Show degrading accuracy of pretrained NN
-    - [ ] Use functional API to identify topics (e.g Billing) and attributes (e.g horrible) and retrain last layer using TL
-- [ ] Save as new model version (bigger model)
-- [ ] Create a Human in the loop process (??)
-- [ ] Package model
-- [ ] Deploy Django app
+GPTopic is a topic modeling framework that abstracts the nuances of Natural Language Processing and Deep Learning.
+
+It provides a high level API that allows you to label "unlabeled" reviews using a Large Language Model and then train a deep neural network the, now, labeled data.
+
+Benefits:
+* Converts an unsupervised learning problem into a supervised learning problem.
+* Abstracts the knowledge need to train neural networks specialized in text processing.
+
+## Quick Start for Mac and Linux users
+1. Clone this repository: git clone https://github.com/JJTorresDS/gptopic.git
+2. On the terminal run the following commands to create a virtual environment:
+    * python3 -m venv venv
+    * source venv/bin/activate
+3. On the terminal, and after activating the virtual environment run: pip install -r requirements.txt
+4. On the terminal run the following comman to open a jupyter notebook: jupyter notebook
+4. Create a [GEMINI API key (its free!)](https://aistudio.google.com/app/apikey)
+5. Open the "Quick start.ipynb" notebook.
+
+Have fun !!
